@@ -9,10 +9,19 @@
 
 name: Deploy Python Package
 
+# on:
+#   push:  # Trigger on every push to any branch
+#     branches:
+#       - "**"  # This pattern means any branch
+
 on:
-  push:  # Trigger on every push to any branch
-    branches:
-      - "**"  # This pattern means any branch
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+a[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+b[0-9]+"
+      - "[0-9]+.[0-9]+.[0-9]+rc[0-9]+"
+
 
 permissions:
   contents: write

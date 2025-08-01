@@ -1,6 +1,6 @@
 [project]
 name = "easymdm"
-version = "0.1.0"
+version = "0.0.1"
 description = "easymdm is an open source mdm system, usefull for user data consolidation."
 readme = "README.md"
 authors = [
