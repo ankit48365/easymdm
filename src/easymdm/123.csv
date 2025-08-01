@@ -1,4 +1,4 @@
-first_name,middle_name,last_name,address,city,state,zip_code,phone,email,Original,COMDL,REAL,CreatedON
+first_name,middle_name,last_name,address,city,state,zip_code,phone,email,original,COMDL,REAL,CreatedON
 Valerie,Jessica,Phillip,053 Hopkins Ports STE 23,West Wesley,Kentucky,57143,(211)590-4015x003,,1,0,0,7/7/2002
 Valerie,,Phillips,054 Hopkins Ports Suite 23,West Wesley,Kentucky,57143,(211)590-4015x003,mwest@example.net,0,1,07/7/2022
 Brent,Tina,Keit,546 Williams Points,Barbarabury,Oklahoma,28304,420-401-2179x21684,amybaker@example.org,0,0,0,7/7/2022

@@ -12,16 +12,17 @@ def main():
     parser.add_argument('--name', help="File name (required if source is file)")
     parser.add_argument('--table', help="Schema and table name (required if source is database), e.g., schema.table")
     parser.add_argument('--config', default='config.yaml', help="Path to YAML config file")
+    parser.add_argument('--outpath', default='out/', help="Output path for results")
 
     args = parser.parse_args()
 
     # Validate arguments based on source
     if args.source == 'file':
-        if not args.name or not args.config:
-            parser.error("--name & --config is required when source is file")
+        if not args.name or not args.config or not args.outpath:
+            parser.error("--name & --config  & --outpath are required when source is file")
         print(f"Loading data from file: {args.name}")
         # df = load_file_data(args.source, args.name)
-        dispatcher(args.source, args.name, args.config)
+        dispatcher(args.source, args.name, args.config, args.outpath)
 
 
         # df = load_file_data(args.name)
@@ -36,11 +37,11 @@ def main():
     #         parser.error("--table is required when source is database")
     #     df = load_sqlite_data(args.table)
     elif args.source == 'sqlite':
-        if not args.table or not args.config:
-            parser.error("--table & --config is required : source = sqlite")
+        if not args.table or not args.config or not args.outpath:
+            parser.error("--table & --config & --outpath are required : source = sqlite")
             sys.exit(1) 
         # df = load_sqlite_data(args.source, args.table, args.config)
-        dispatcher(args.source, args.table, args.config)
+        dispatcher(args.source, args.table, args.config, args.outpath)
         # sys.exit(0)
     # # Load YAML config
     # try:

@@ -14,7 +14,7 @@ or
 PS D:\mygit\easymdm\src> uv run -m easymdm.cli --source file --name ./easymdm/123.csv --config D:\\mygit\\easymdm\\config.yaml
                          uv run -m easymdm.cli --source file --name D:\\mygit\\easymdm\\src\\easymdm\\123.csv --config D:\\mygit\\easymdm\\config.yaml
 or for sqlite
-PS D:\mygit\easymdm\src> uv run -m easymdm.cli --source sqlite --table main.slvr_personal_info --config D:\\mygit\\easymdm\\config.yaml
+uv run -m easymdm.cli --source sqlite --table main.slvr_personal_info --config D:\mygit\easymdm\config.yaml --outpath out/
 ```
 
 ### BUILD

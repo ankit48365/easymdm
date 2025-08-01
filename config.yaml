@@ -40,7 +40,7 @@ survivorship:
 
 priority_rule:
   conditions:
-    - column: original
+    - column: Original
       value: 1
     - column: COMDL
       value: 1

@@ -10,7 +10,7 @@ def process_blocking(df, yaml_path):
         config = yaml.safe_load(f)
     blocking_columns = config['blocking']['columns']
     # Example processing based on config
-    print(blocking_columns)
+    # print(blocking_columns)
 
     # Create a new column by concatenating the specified columns
     df['concat_column'] = df[blocking_columns].apply(lambda x: ' '.join(x.astype(str)).lower(), axis=1)

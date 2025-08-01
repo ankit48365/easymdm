@@ -8,6 +8,7 @@ def process_similarity(df, yaml_path, candidate_pairs):
     with open(yaml_path, 'r') as f:
         config = yaml.safe_load(f)
     similarity_configs = config['similarity']
+    thresholds = config['thresholds']
     # 3. Pairwise similarity
     compare = recordlinkage.Compare()
     for sim in similarity_configs:
@@ -41,3 +42,5 @@ def process_similarity(df, yaml_path, candidate_pairs):
         bins=[0, thresholds['review'], thresholds['auto_merge'], 1.0],
         labels=['non_match', 'review', 'auto_merge']
     )
+    
+    return features

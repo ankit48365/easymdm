@@ -35,9 +35,6 @@ def load_database_data(schema_table):
 
 def load_sqlite_data(schema_table, yaml_path):
     try:
-        # Hardcoded YAML config file path
-        # yaml_path = 'D:\\mygit\\easymdm\\config.yaml'
-
         # Load DB config from YAML file
         with open(yaml_path, 'r') as f:
             config = yaml.safe_load(f)
@@ -58,15 +55,10 @@ def load_sqlite_data(schema_table, yaml_path):
         conn.close()
         return df
 
-    except Exception as e:
-        print(f"Error loading SQLite data: {e}")
-        return None
-
-        
     except ValueError:
         raise ValueError("Table must be in 'schema.table' format.")
     except Exception as e:
-        raise ValueError(f"Error loading database: {str(e)}")
+        raise ValueError(f"Error loading SQLite data: {str(e)}")
 
 
 if __name__ == '__main__':
