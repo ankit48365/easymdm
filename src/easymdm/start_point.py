@@ -7,19 +7,7 @@ from easymdm.priority_survivor import process_write_outputs
 import yaml
 import pandas as pd
 
-# def dispatcher(data_style, *args):
-#     if data_style == "file":
-#         df = load_file_data(*args)
-#         print(df)
-#     elif data_style == "sqlite":
-#         if len(args) == 3:
-#             df = load_sqlite_data(args[0], args[1], args[2])
-#             print(df)
-#         else:
-#             print(args[0], args[1], args[2])
-#             raise ValueError("sqlite data_style requires exactly 3 arguments.")
-#     else:
-#         raise ValueError("Unknown data_style. Use 'file' or 'sqlite'.")
+
 def dispatcher(data_style, *args):
     if data_style == "file":
         if len(args) == 3:  # Expect file_name, config, and out_path
