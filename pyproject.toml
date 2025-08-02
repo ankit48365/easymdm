@@ -1,6 +1,6 @@
 [project]
 name = "easymdm"
-version = "0.0.2"
+version = "0.0.6"
 description = "easymdm is an open source mdm system, usefull for user data consolidation."
 readme = "README.md"
 authors = [
@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.scripts]
-easymdm = "easymdm.cli:main"
+roar = "easymdm.cli:main"
 
 [build-system]
 requires = ["hatchling"]

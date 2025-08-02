@@ -59,7 +59,13 @@ or for sqlite
 uv run -m easymdm.cli --source sqlite --table main.slvr_personal_info --config D:\mygit\easymdm\config.yaml --outpath out/
 ```
 
+### CICD Action Messages
 
+```
+PleaseDeploytoPyPI
+
+
+```
 
 ### BUILD
 
@@ -82,10 +88,9 @@ Warnings
 
 ```
 
-CICD Action Messages
+### Deploy
 
 ```
-PleaseDeploytoPyPI
-
-
-```
+> Updated version in pyproject.toml {uv version --bump patch}
+> git synch using message - PleaseDeploytoPyPI
+> Same version run {git tag 0.0.x} then {git push --tag}

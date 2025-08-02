@@ -49,9 +49,20 @@ jobs:
         VERSION=$(echo $GITHUB_REF | sed 's/refs\/tags\///')
         sed -i "s/version = \".*\"/version = \"$VERSION\"/" pyproject.toml
 
+    # - name: Build package
+    #   run: python -m build
+    # - name: Publish package
+    #   uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+    #   with:
+    #     user: __token__
+    #     password: ${{ secrets.PYPI_API_TOKEN }}
     - name: Build package
       run: python -m build
-    - name: Publish package
+
+    - name: Remove source distribution
+      run: rm dist/*.tar.gz
+
+    - name: Publish only wheel to PyPI
       uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
       with:
         user: __token__
